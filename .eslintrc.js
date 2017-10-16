@@ -1,6 +1,7 @@
 module.exports = {
     "env": {
         "browser": true,
+        "commonjs": true,
         "es6": true
     },
     "extends": "eslint:recommended",
@@ -17,7 +18,7 @@ module.exports = {
     "rules": {
         "indent": [
             "error",
-            "tab"
+            2
         ],
         "linebreak-style": [
             "error",
@@ -30,6 +31,12 @@ module.exports = {
         "semi": [
             "error",
             "always"
+        ],
+        "no-console": [
+          "off"
+        ],
+        "no-process-env": [
+          "off"
         ]
     }
 };
