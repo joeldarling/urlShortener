@@ -8,7 +8,7 @@
     "start": "NODE_ENV=dev nodemon src/server/server",
     "prod": "NODE_ENV=prod nodemon src/server/server"
   },
-  "author": "",
+  "author": "Joel Darling",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",

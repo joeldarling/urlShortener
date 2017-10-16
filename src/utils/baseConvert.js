@@ -27,4 +27,4 @@ function decode(str){
 module.exports = {
   encode,
   decode
-}
+};

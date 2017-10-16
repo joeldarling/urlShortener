@@ -2,14 +2,14 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
-mongoose.Promise = Promise;
+mongoose.Promise = Promise; // use ES6 Promises
 
 const morgran = require('morgan');
 const bodyParser = require('body-parser');
 
 // routes
 const apiRoutes = require('./routes/api');
-
+const mainRoutes = require('./routes/main');
 // server config
 const port = process.env.port || 3000;
 const PROD = process.env.NODE_ENV === 'prod';
@@ -27,8 +27,8 @@ app.use(bodyParser.json());
 
 // tell Express to serve file from our public folder
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use('/api', apiRoutes);
+app.use(mainRoutes);
 
 app.get('/', (req, res) => {
   res.send('main page');
