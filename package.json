@@ -1,0 +1,24 @@
+{
+  "name": "url-shorten",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=dev nodemon src/server/server",
+    "prod": "NODE_ENV=prod nodemon src/server/server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "is-url": "^1.2.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "eslint-plugin-react": "^7.4.0",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.12.1"
+  }
+}
