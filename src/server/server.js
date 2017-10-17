@@ -24,15 +24,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // configure routes
-
+const indexPath = path.join(__dirname, '../../build/index.html');
+console.log('INDEX', indexPath);
+console.log('DIRRRRR', path.join(__dirname, '../../build/index.html'))
 // tell Express to serve file from our public folder
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../../build/')));
 app.use('/api', apiRoutes);
-app.use(mainRoutes);
 
 app.get('/', (req, res) => {
-  res.send('main page');
+  res.sendFile(indexPath);
 });
+
+app.use(mainRoutes);
 
 // connect to db and then start server
 mongoose.connect(process.env.DB_URL || 'mongodb://localhost/url-shortener', {useMongoClient: true});
