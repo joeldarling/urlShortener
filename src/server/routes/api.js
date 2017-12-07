@@ -4,7 +4,7 @@ const {encode} = require('../../utils/baseConvert');
 const {Url} = require('../db/models');
 const isUrl = require('is-url');
 
-const hostname = process.env.hostname || 'localhost:3000';
+const hostname = process.env.HOSTNAME || 'http://localhost:3000';
 
 router.post('/shorten', (req, res) => {
   const {url} = req.body;
@@ -16,7 +16,7 @@ router.post('/shorten', (req, res) => {
   Url.findOne({longUrl: url}, (err, doc) => {
     if(doc) {
       // this alread exists
-      const shortUrl = `http://${hostname}/${encode(doc.entityId)}`;
+      const shortUrl = `${hostname}/${encode(doc.entityId)}`;
       return res.send({shortUrl});
     } else {
       const newUrl = Url({
@@ -24,7 +24,7 @@ router.post('/shorten', (req, res) => {
       });
       newUrl.save()
         .then(result => {
-          const shortUrl = `http://${hostname}/${encode(result.entityId)}`;
+          const shortUrl = `${hostname}/${encode(result.entityId)}`;
           return res.send({shortUrl});
         });
     }

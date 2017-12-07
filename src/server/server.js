@@ -11,7 +11,7 @@ const bodyParser = require('body-parser');
 const apiRoutes = require('./routes/api');
 const mainRoutes = require('./routes/main');
 // server config
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 const PROD = process.env.NODE_ENV === 'prod';
 
 // middleware
@@ -37,7 +37,7 @@ app.get('/', (req, res) => {
 app.use(mainRoutes);
 
 // connect to db and then start server
-mongoose.connect(process.env.DB_URL || 'mongodb://localhost/url-shortener', {useMongoClient: true});
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/url-shortener', {useMongoClient: true});
 console.log('db connected');
 
 app.listen(port, () => {
