@@ -12,7 +12,7 @@ const apiRoutes = require('./routes/api');
 const mainRoutes = require('./routes/main');
 // server config
 const port = process.env.PORT || 3000;
-const PROD = process.env.NODE_ENV === 'prod';
+const PROD = process.env.NODE_ENV === 'production';
 
 // middleware
 if(!PROD) {         

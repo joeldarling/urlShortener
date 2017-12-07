@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=dev nodemon src/server/server",
+    "start": "NODE_ENV=dev node src/server/server",
     "prod": "NODE_ENV=prod nodemon src/server/server",
     "build:server": "babel ./src/ -d build/server/",
     "build:watch:server": "babel ./src/ -d build/src/ --watch",
     "build:client": "webpack --config ./webpack.config.js/",
     "build:watch:client": "webpack --config ./webpack.config.js/ --watch",
-    "start:dev": "parallelshell 'npm run build:watch:client' 'nodemon src/server/server'"
+    "start:dev": "parallelshell 'npm run build:watch:client' 'nodemon src/server/server'",
+    "heroku-postbuild": "webpack -p --config ./webpack.config.js --progress"
   },
   "author": "Joel Darling",
   "license": "ISC",
