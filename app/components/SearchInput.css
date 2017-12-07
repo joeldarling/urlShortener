@@ -1,0 +1,34 @@
+.SearchInput { 
+  margin: 10px;
+  width: 100%;
+  display: flex;
+}
+
+.SearchInput form {
+  width: 100%;
+}
+
+.SearchInputBox {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  height: 40px;
+  width: 100%;
+  padding: 14.4px 23px;
+  font-size: 18px;
+  border: none;
+}
+
+.SearchButton {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  display: flex;
+  align-items: center;
+  padding: 8px 20px;
+  background-color: #FC4349;
+  cursor: pointer;
+}
+
+.SearchButton:hover {
+  filter: brightness(120%);
+  transition: all 0.2s ease;
+}
