@@ -4,7 +4,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 mongoose.Promise = Promise; // use ES6 Promises
 
-const morgran = require('morgan');
+const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
 // routes
@@ -16,7 +16,7 @@ const PROD = process.env.NODE_ENV === 'prod';
 
 // middleware
 if(!PROD) {         
-  app.use(morgran('dev')); // url logging
+  app.use(morgan('dev')); // url logging
 }
 
 // parse req body
@@ -25,8 +25,7 @@ app.use(bodyParser.json());
 
 // configure routes
 const indexPath = path.join(__dirname, '../../build/index.html');
-console.log('INDEX', indexPath);
-console.log('DIRRRRR', path.join(__dirname, '../../build/index.html'))
+
 // tell Express to serve file from our public folder
 app.use(express.static(path.join(__dirname, '../../build/')));
 app.use('/api', apiRoutes);
@@ -39,9 +38,8 @@ app.use(mainRoutes);
 
 // connect to db and then start server
 mongoose.connect(process.env.DB_URL || 'mongodb://localhost/url-shortener', {useMongoClient: true});
-console.log('db conencted');
+console.log('db connected');
 
 app.listen(port, () => {
   console.log(`Server now running on port ${port}`);
 });
-

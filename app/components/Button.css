@@ -1,0 +1,14 @@
+.Button {
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px;
+  background-color: #FC4349;
+  cursor: pointer;
+}
+
+.Button:hover {
+  filter: brightness(120%);
+  transition: all 0.2s ease;
+}
