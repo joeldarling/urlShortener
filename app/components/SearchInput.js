@@ -23,7 +23,7 @@ export default class SearchInput extends Component {
           value={this.state.value}
           onChange={this.onChange}
         />
-        <div className="SearchButton" onClick={this.onSubmit}>Shorten</div>          
+        <div className="SearchButton" onClick={this.onSubmit}>Shrink</div>          
       </div>
     );
   }
