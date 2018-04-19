@@ -1,11 +1,13 @@
 .Button {
   border-radius: 3px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 20px;
+  width: 250px;
+  outline: none;
+  font-size: 1.0rem;
+  color: white;
+  padding: 20px 20px;
   background-color: #FC4349;
   cursor: pointer;
+  margin: 20px;
 }
 
 .Button:hover {

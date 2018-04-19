@@ -56,19 +56,19 @@ export default class App extends Component {
       <div className="Url">
         <a href={shortUrl} target="_blank" className="big-url">{shortUrl}</a>
         <br/>
-        <Button color={buttonColor} onClick={this.onCopyToClipboard}>{buttonText}</Button>
+        <Button color={buttonColor} style={{width: 150}} onClick={this.onCopyToClipboard}>{buttonText}</Button>
       </div>
     )
   }
   render() {
     const {error} = this.state;
     return (
-      <div className="App">
+      <div className="App" onKeyDown={this.handleKeyPress} tabIndex="0">
         <h1>Hyperlink Shrinker</h1>
         <SearchInput onSubmit={this.onSubmit}/>
         {this.renderLoading()}
         {this.renderShort()}
-        <small>{error}</small>
+        {error && <small>{error}</small>}
       </div>
     );
   }
